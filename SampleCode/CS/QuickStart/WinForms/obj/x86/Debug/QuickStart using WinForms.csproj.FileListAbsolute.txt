@@ -1,0 +1,66 @@
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.exe.config
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.exe
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.pdb
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\AntiXSSLibrary.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.IdentityModel.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Client.CodeGeneration.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Client.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Portal.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Portal.Files.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csprojResolveAssemblyReference.cache
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\Microsoft.Crm.Sdk.Samples.Properties.Resources.resources
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\Microsoft.Crm.Sdk.Samples.WinCRUDOperations.resources
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csproj.GenerateResource.Cache
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csproj.CoreCompileInputs.cache
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\quickstartWF.exe
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\quickstartWF.pdb
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.exe.config
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.exe
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.pdb
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\AntiXSSLibrary.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.IdentityModel.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Client.CodeGeneration.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Client.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Portal.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Portal.Files.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\SDK\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csprojResolveAssemblyReference.cache
+C:\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\Microsoft.Crm.Sdk.Samples.Properties.Resources.resources
+C:\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\Microsoft.Crm.Sdk.Samples.WinCRUDOperations.resources
+C:\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csproj.GenerateResource.Cache
+C:\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csproj.CoreCompileInputs.cache
+C:\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\quickstartWF.exe
+C:\SDK\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\quickstartWF.pdb
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.exe.config
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.exe
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\quickstartWF.pdb
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\AntiXSSLibrary.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.IdentityModel.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Client.CodeGeneration.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Client.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Portal.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Portal.Files.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csprojResolveAssemblyReference.cache
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\Microsoft.Crm.Sdk.Samples.Properties.Resources.resources
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\Microsoft.Crm.Sdk.Samples.WinCRUDOperations.resources
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csproj.GenerateResource.Cache
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\QuickStart using WinForms.csproj.CoreCompileInputs.cache
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\quickstartWF.exe
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\WinForms\obj\x86\Debug\quickstartWF.pdb

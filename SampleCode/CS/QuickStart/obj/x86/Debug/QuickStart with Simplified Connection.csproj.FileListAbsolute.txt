@@ -1,0 +1,54 @@
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\app.config
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.exe.config
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.exe
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.pdb
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\AntiXSSLibrary.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Client.CodeGeneration.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Client.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Portal.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Portal.Files.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.IdentityModel.dll
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart with Simplified Connection.csprojResolveAssemblyReference.cache
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart with Simplified Connection.csproj.CoreCompileInputs.cache
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\obj\x86\Debug\SimpleConnect.exe
+C:\Users\edu100\Desktop\SDK\SampleCode\CS\QuickStart\obj\x86\Debug\SimpleConnect.pdb
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\app.config
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.exe.config
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.exe
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.pdb
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\AntiXSSLibrary.dll
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Client.CodeGeneration.dll
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Client.dll
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Portal.dll
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Portal.Files.dll
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.IdentityModel.dll
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\SDK\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\SDK\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart with Simplified Connection.csprojResolveAssemblyReference.cache
+C:\SDK\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart with Simplified Connection.csproj.CoreCompileInputs.cache
+C:\SDK\SampleCode\CS\QuickStart\obj\x86\Debug\SimpleConnect.exe
+C:\SDK\SampleCode\CS\QuickStart\obj\x86\Debug\SimpleConnect.pdb
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\app.config
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.exe.config
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.exe
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\SimpleConnect.pdb
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\AntiXSSLibrary.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Client.CodeGeneration.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Client.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Portal.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Portal.Files.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.IdentityModel.dll
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart with Simplified Connection.csprojResolveAssemblyReference.cache
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart with Simplified Connection.csproj.CoreCompileInputs.cache
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\SimpleConnect.exe
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\SimpleConnect.pdb
