@@ -74,3 +74,6 @@ C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart.csprojRes
 C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart.csproj.CoreCompileInputs.cache
 C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\BasicOperations.exe
 C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\BasicOperations.pdb
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\WindowsFormsApp1.Form1.resources
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart.csproj.GenerateResource.Cache
+C:\Oppari_SV_1401281\SampleCode\CS\QuickStart\obj\x86\Debug\QuickStart.csproj.ResolveComReference.cache

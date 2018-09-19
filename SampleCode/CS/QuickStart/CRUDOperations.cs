@@ -19,6 +19,7 @@ using System.ServiceModel;
 using System.IdentityModel.Tokens;
 using System.ServiceModel.Security;
 using System.Linq;
+using System.Timers;
 
 // These namespaces are found in the Microsoft.Xrm.Sdk.dll and 
 // Microsoft.Crm.Sdk.Proxy.dll assemblies.
@@ -29,6 +30,8 @@ using Microsoft.Crm.Sdk.Messages;
 using System.Data;
 using System.Collections.Generic;
 using Microsoft.Crm.Sdk.Samples.Forms;
+using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace Microsoft.Crm.Sdk.Samples
 {
@@ -49,59 +52,16 @@ namespace Microsoft.Crm.Sdk.Samples
         {
             sql = new SQLquery();
         }
+
+        [STAThread]
         static public void Main(string[] args)
         {
-
             
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
 
-            // The connection to the Organization web service.
-            OrganizationServiceProxy serviceProxy = null;
 
-            try
-            {
-                // Obtain the target organization's web address and client logon credentials
-                // from the user by using a helper class.
-                ServerConnection serverConnect = new ServerConnection();
-                ServerConnection.Configuration config = serverConnect.GetServerConfiguration();
-
-                // Establish an authenticated connection to the Organization web service. 
-                serviceProxy = new OrganizationServiceProxy(config.OrganizationUri, config.HomeRealmUri,
-                                                            config.Credentials, config.DeviceCredentials);
-
-                CRUDOperations app = new CRUDOperations();
-
-                // Create any records that must exist in the database. These record references are
-                // stored in a collection so the records can be deleted later.
-                EntityReferenceCollection records =
-                    app.CreateRequiredEntityRecords(serviceProxy);
-
-                // Perform the primary operation of this sample.
-                app.Run(serviceProxy, records);
-
-                // Delete all remaining records that were created by this sample.
-                app.DeleteEntityRecords(serviceProxy, records, true);
-            }
-
-            // Some exceptions to consider catching.
-            //<snippetCRUDOperations3>
-            catch (FaultException<Microsoft.Xrm.Sdk.OrganizationServiceFault> e) { HandleException(e); }
-            catch (TimeoutException e) { HandleException(e); }
-            catch (SecurityTokenValidationException e) { HandleException(e); }
-            catch (ExpiredSecurityTokenException e) { HandleException(e); }
-            catch (MessageSecurityException e) { HandleException(e); }
-            catch (SecurityNegotiationException e) { HandleException(e); }
-            catch (SecurityAccessDeniedException e) { HandleException(e); }
-            catch (Exception e) { HandleException(e); }
-            //</snippetCRUDOperations3>
-
-            finally
-            {
-                // Always dispose the service object to close the service connection and free resources.
-                if (serviceProxy != null) serviceProxy.Dispose();
-
-                Console.WriteLine("Press <Enter> to exit.");
-                Console.ReadLine();
-            }
         }
 
         //<snippetCRUDOperations1>
@@ -111,7 +71,7 @@ namespace Microsoft.Crm.Sdk.Samples
         /// </summary>
         /// <param name="serviceProxy">An established connection to the Organization web service.</param>
         /// <param name="records">A collection of entity records created by this sample.</param>
-        public void Run(OrganizationServiceProxy serviceProxy, EntityReferenceCollection records)
+        public void Run(OrganizationServiceProxy serviceProxy, EntityReferenceCollection records, CheckBox checkBox1, CheckBox checkBox2, CheckBox checkBox3, CheckBox checkBox4, CheckBox checkBox5)
         {
             // Enable early-bound entity types. This enables use of IntelliSense in Visual Studio
             // and avoids spelling errors in attribute names when using the Entity property bag.
@@ -120,25 +80,10 @@ namespace Microsoft.Crm.Sdk.Samples
             // Here we will use the interface instead of the proxy object.
             IOrganizationService service = (IOrganizationService)serviceProxy;
 
-            // Display information about the logged on user.
-            Guid userid = ((WhoAmIResponse)service.Execute(new WhoAmIRequest())).UserId;
-            SystemUser systemUser = (SystemUser)service.Retrieve("systemuser", userid,
-                new ColumnSet(new string[] { "firstname", "lastname" }));
-            Console.WriteLine("Logged on user is {0} {1}.", systemUser.FirstName, systemUser.LastName);
 
-            // Retrieve the version of Microsoft Dynamics CRM.
-            RetrieveVersionRequest versionRequest = new RetrieveVersionRequest();
-            RetrieveVersionResponse versionResponse =
-                (RetrieveVersionResponse)service.Execute(versionRequest);
-            Console.WriteLine("Microsoft Dynamics CRM version {0}.", versionResponse.Version);
 
-            //<snippetCRUDOperations2>
-            // Instantiate an account object. Note the use of the option set enumerations defined
-            // in OptionSets.cs.
-            //Account account = new Account { Name = "Von Virguli"};
 
-            
-
+            Form1 newForm = new Form1();
             
 
             //Console.Write("{0} {1} created, ", account.LogicalName, account.Name);
@@ -165,6 +110,8 @@ namespace Microsoft.Crm.Sdk.Samples
             qe.ColumnSet = colsAccount;
             qcontact.ColumnSet = colsContact;
 
+
+            
             List<AccountModel> AccountList = new List<AccountModel>();
 
 
@@ -185,24 +132,28 @@ namespace Microsoft.Crm.Sdk.Samples
 
 
 
-            
 
 
 
             //ALLA OLEVA FUNKTIO TOIMII, POISSA KÄYTÖSTÄ SEURAAVAN FUNKTION TEKOA VARTEN
             //checkCreateAndUpdateClients(AccountList, ec, service); Tämä oli huono funktio.
+            if (checkBox1.Checked) { 
             CRMcreateOrUpdateClients(AccountList, service, colsAccount); //Tämä hyvä funktio, tämä toimii
-
+            }
             //ALLA OLEVA FUNKTIO TOIMII
+            if (checkBox2.Checked) { 
             CRMcreateOrUpdateContacts(ContactList, service, colsContact); //Tämä hyvä funktio, tämä toimii
-
+            }
             //ALLA OLEVA FUNKTIO TOIMII
+            if (checkBox3.Checked) { 
             CRMcreateOrUpdateThesis(ThesisList, service, colsThesis); //Tämä hyvä funktio, tämä toimii
-
+            }
+            if (checkBox4.Checked) { 
             OHOScreateOrUpdateClients(eaccount);
-
+            }
+            if (checkBox5.Checked) { 
             OHOScreateOrUpdateContacts(econtact);
-
+            }
         }
         //</snippetCRUDOperations1>
 
