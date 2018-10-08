@@ -134,28 +134,28 @@ namespace Microsoft.Crm.Sdk.Samples
         
 
         // haetaan yhteyshenkilo etu- ja sukunimellä
-        public DataTable GetContactWithName(string etunimi, string sukunimi)
+        public DataTable GetContactWithName(/*string etunimi, string sukunimi*/string kokonimi)
         {
             DataTable data = new DataTable();
             SqlConnection conn = sqlconnman.GetDatabaseConnection();
             string commandstring = "CRM_HAE_YHTEYSHENKILO_NIMELLA_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if (String.IsNullOrEmpty(etunimi))
+            if (String.IsNullOrEmpty(kokonimi))
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             }
             else
             {
-                command.Parameters.AddWithValue("@etunimi", etunimi);
+                command.Parameters.AddWithValue("@kokonimi", kokonimi);
             }
-            if (String.IsNullOrEmpty(sukunimi))
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            } else
-            {
-                command.Parameters.AddWithValue("@sukunimi", sukunimi);
-            }
+            //if (String.IsNullOrEmpty(sukunimi))
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //} else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", sukunimi);
+            //}
             command.CommandType = CommandType.StoredProcedure;
 
             using (SqlDataAdapter a = new SqlDataAdapter(command))
@@ -167,28 +167,28 @@ namespace Microsoft.Crm.Sdk.Samples
         }
 
         // haetaan yhteyshenkilö nimillä ja accountIDllä (ulkoinentunnus)
-        public DataTable GetContactWithID(string etunimi, string sukunimi, Guid accountID)
+        public DataTable GetContactWithID(/*string etunimi, string sukunimi*/string kokonimi, Guid accountID)
         {
             DataTable data = new DataTable();
             SqlConnection conn = sqlconnman.GetDatabaseConnection();
             string commandstring = "CRM_HAE_YHTEYSHENKILO_IDLLA_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if (String.IsNullOrEmpty(etunimi))
+            if (String.IsNullOrEmpty(kokonimi))
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             } else
             {
-                command.Parameters.AddWithValue("@etunimi", etunimi);
+                command.Parameters.AddWithValue("@kokonimi", kokonimi);
             }
-            if (String.IsNullOrEmpty(sukunimi))
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@sukunimi", sukunimi);
-            }
+            //if (String.IsNullOrEmpty(sukunimi))
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //}
+            //else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", sukunimi);
+            //}
             command.Parameters.AddWithValue("@accountID", accountID);
             command.CommandType = CommandType.StoredProcedure;
 
@@ -201,29 +201,29 @@ namespace Microsoft.Crm.Sdk.Samples
         }
 
         // haetaan yhteyshenkilo nimillä, accountIDllä ja parentIDllä (yhteisö)
-        public DataTable GetContactWithParentID(string etunimi, string sukunimi, Guid accountID, Guid parentID)
+        public DataTable GetContactWithParentID(/*string etunimi, string sukunimi*/string kokonimi, Guid accountID, Guid parentID)
         {
             DataTable data = new DataTable();
             SqlConnection conn = sqlconnman.GetDatabaseConnection();
             string commandstring = "CRM_HAE_YHTEYSHENKILO_YHTEISOLLA_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if (String.IsNullOrEmpty(etunimi))
+            if (String.IsNullOrEmpty(kokonimi))
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             }
             else
             {
-                command.Parameters.AddWithValue("@etunimi", etunimi);
+                command.Parameters.AddWithValue("@kokonimi", kokonimi);
             }
-            if (String.IsNullOrEmpty(sukunimi))
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@sukunimi", sukunimi);
-            }
+            //if (String.IsNullOrEmpty(sukunimi))
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //}
+            //else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", sukunimi);
+            //}
             if (String.IsNullOrEmpty(parentID.ToString()))
             {
                 command.Parameters.AddWithValue("@parentID", DBNull.Value);
@@ -251,29 +251,29 @@ namespace Microsoft.Crm.Sdk.Samples
         }
 
         // haetaan yhteyshenkilo nimillä, accountIDllä, parentIDllä ja emaililla
-        public DataTable GetContactWithEmail(string etunimi, string sukunimi, Guid accountID, Guid parentID, string email)
+        public DataTable GetContactWithEmail(/*string etunimi, string sukunimi*/string kokonimi, Guid accountID, Guid parentID, string email)
         {
             DataTable data = new DataTable();
             SqlConnection conn = sqlconnman.GetDatabaseConnection();
             string commandstring = "CRM_HAE_YHTEYSHENKILO_SAHKOPOSTILLA_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if (String.IsNullOrEmpty(etunimi))
+            if (String.IsNullOrEmpty(kokonimi))
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             }
             else
             {
-                command.Parameters.AddWithValue("@etunimi", etunimi);
+                command.Parameters.AddWithValue("@kokonimi", kokonimi);
             }
-            if (String.IsNullOrEmpty(sukunimi))
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@sukunimi", sukunimi);
-            }
+            //if (String.IsNullOrEmpty(sukunimi))
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //}
+            //else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", sukunimi);
+            //}
             if (String.IsNullOrEmpty(parentID.ToString()))
             {
                 command.Parameters.AddWithValue("@parentID", DBNull.Value);
@@ -309,29 +309,29 @@ namespace Microsoft.Crm.Sdk.Samples
         }
 
         // haetaan yhteyshenkilo nimillä, accountIDllä, parentIDllä, emaililla ja puh.numerolla
-        public DataTable GetContactWithPhone(string etunimi, string sukunimi, Guid accountID, Guid parentID, string email, string puhelin)
+        public DataTable GetContactWithPhone(/*string etunimi, string sukunimi*/string kokonimi, Guid accountID, Guid parentID, string email, string puhelin)
         {
             DataTable data = new DataTable();
             SqlConnection conn = sqlconnman.GetDatabaseConnection();
             string commandstring = "CRM_HAE_YHTEYSHENKILO_PUHELIMELLA_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if (String.IsNullOrEmpty(etunimi))
+            if (String.IsNullOrEmpty(kokonimi))
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             }
             else
             {
-                command.Parameters.AddWithValue("@etunimi", etunimi);
+                command.Parameters.AddWithValue("@kokonimi", kokonimi);
             }
-            if (String.IsNullOrEmpty(sukunimi))
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@sukunimi", sukunimi);
-            }
+            //if (String.IsNullOrEmpty(sukunimi))
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //}
+            //else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", sukunimi);
+            //}
             if (String.IsNullOrEmpty(parentID.ToString()))
             {
                 command.Parameters.AddWithValue("@parentID", DBNull.Value);
@@ -374,29 +374,29 @@ namespace Microsoft.Crm.Sdk.Samples
         }
 
         // haetaan yhteyshenkilo nimillä, emaililla ja puh.numerolla
-        public DataTable GetContactWithNameEmailPhone(string etunimi, string sukunimi, string email, string puhelin)
+        public DataTable GetContactWithNameEmailPhone(/*string etunimi, string sukunimi*/string kokonimi, string email, string puhelin)
         {
             DataTable data = new DataTable();
             SqlConnection conn = sqlconnman.GetDatabaseConnection();
             string commandstring = "CRM_HAE_YHTEYSHENKILO_NIMI_EMAIL_PUH_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if (String.IsNullOrEmpty(etunimi))
+            if (String.IsNullOrEmpty(kokonimi))
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             }
             else
             {
-                command.Parameters.AddWithValue("@etunimi", etunimi);
+                command.Parameters.AddWithValue("@kokonimi", kokonimi);
             }
-            if (String.IsNullOrEmpty(sukunimi))
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@sukunimi", sukunimi);
-            }
+            //if (String.IsNullOrEmpty(sukunimi))
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //}
+            //else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", sukunimi);
+            //}
             if (String.IsNullOrEmpty(email))
             {
                 command.Parameters.AddWithValue("@email", DBNull.Value);
@@ -411,7 +411,7 @@ namespace Microsoft.Crm.Sdk.Samples
             }
             else
             {
-                command.Parameters.AddWithValue("@puhelin", etunimi);
+                command.Parameters.AddWithValue("@puhelin", puhelin);
             }
             command.CommandType = CommandType.StoredProcedure;
 
@@ -424,28 +424,28 @@ namespace Microsoft.Crm.Sdk.Samples
         }
 
         // haetaan yhteyshenkilo nimillä, emaililla, puh.numerolla ja parentIDllä
-        public DataTable GetContactWithNameEmailPhoneParent(string etunimi, string sukunimi, string email, string puhelin, Guid parentID)
+        public DataTable GetContactWithNameEmailPhoneParent(/*string etunimi, string sukunimi*/string kokonimi, string email, string puhelin, Guid parentID)
         {
             DataTable data = new DataTable();
             SqlConnection conn = sqlconnman.GetDatabaseConnection();
             string commandstring = "CRM_HAE_YHTEYSHENKILO_NIMI_EMAIL_PUH_YHTEISO_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if (String.IsNullOrEmpty(etunimi))
+            if (String.IsNullOrEmpty(kokonimi))
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             } else
             {
-                command.Parameters.AddWithValue("@etunimi", etunimi);
+                command.Parameters.AddWithValue("@kokonimi", kokonimi);
             }
-            if (String.IsNullOrEmpty(sukunimi))
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@sukunimi", sukunimi);
-            }
+            //if (String.IsNullOrEmpty(sukunimi))
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //}
+            //else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", sukunimi);
+            //}
             if (String.IsNullOrEmpty(parentID.ToString()))
             {
                 command.Parameters.AddWithValue("@parentID", DBNull.Value);
@@ -468,7 +468,7 @@ namespace Microsoft.Crm.Sdk.Samples
             }
             else
             {
-                command.Parameters.AddWithValue("@puhelin", etunimi);
+                command.Parameters.AddWithValue("@puhelin", kokonimi);
             }
             command.CommandType = CommandType.StoredProcedure;
 
@@ -571,21 +571,21 @@ namespace Microsoft.Crm.Sdk.Samples
             string commandstring = "CRM_LISAA_YHTEYSHENKILO_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if(conmodel.etunimi == null || conmodel.etunimi == "" || conmodel.etunimi == " " || conmodel.etunimi == "null")
+            if(conmodel.kokonimi == null || conmodel.kokonimi == "" || conmodel.kokonimi == " " || conmodel.kokonimi == "null")
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             } else
             {
-                command.Parameters.AddWithValue("@etunimi", conmodel.etunimi);
+                command.Parameters.AddWithValue("@kokonimi", conmodel.kokonimi);
             }
-            if (conmodel.sukunimi == null || conmodel.sukunimi == "" || conmodel.sukunimi == " " || conmodel.sukunimi == "null")
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@sukunimi", conmodel.sukunimi);
-            }
+            //if (conmodel.sukunimi == null || conmodel.sukunimi == "" || conmodel.sukunimi == " " || conmodel.sukunimi == "null")
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //}
+            //else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", conmodel.sukunimi);
+            //}
             if (conmodel.email == null || conmodel.email == "" || conmodel.email == " " || conmodel.email == "null")
             {
                 command.Parameters.AddWithValue("@email", DBNull.Value);
@@ -653,22 +653,22 @@ namespace Microsoft.Crm.Sdk.Samples
             string commandstring = "CRM_PAIVITA_YHTEYSHENKILO_SP";
             SqlCommand command = new SqlCommand(commandstring, conn);
             command.Parameters.Clear();
-            if (conmodel.etunimi == null || conmodel.etunimi == "" || conmodel.etunimi == " " || conmodel.etunimi == "null")
+            if (conmodel.kokonimi == null || conmodel.kokonimi == "" || conmodel.kokonimi == " " || conmodel.kokonimi == "null")
             {
-                command.Parameters.AddWithValue("@etunimi", DBNull.Value);
+                command.Parameters.AddWithValue("@kokonimi", DBNull.Value);
             }
             else
             {
-                command.Parameters.AddWithValue("@etunimi", conmodel.etunimi);
+                command.Parameters.AddWithValue("@kokonimi", conmodel.kokonimi);
             }
-            if (conmodel.sukunimi == null || conmodel.sukunimi == "" || conmodel.sukunimi == " " || conmodel.sukunimi == "null")
-            {
-                command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@sukunimi", conmodel.sukunimi);
-            }
+            //if (conmodel.sukunimi == null || conmodel.sukunimi == "" || conmodel.sukunimi == " " || conmodel.sukunimi == "null")
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", DBNull.Value);
+            //}
+            //else
+            //{
+            //    command.Parameters.AddWithValue("@sukunimi", conmodel.sukunimi);
+            //}
             if (conmodel.email == null || conmodel.email == "" || conmodel.email == " " || conmodel.email == "null")
             {
                 command.Parameters.AddWithValue("@email", DBNull.Value);

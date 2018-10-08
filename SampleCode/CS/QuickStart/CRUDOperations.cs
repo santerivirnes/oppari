@@ -93,7 +93,7 @@ namespace Microsoft.Crm.Sdk.Samples
             ColumnSet colsAccount = new ColumnSet(
                 new String[] { "name","emailaddress1","address1_name","accountid","modifiedon"/*,"address1_postalcode","address1_city"*/ });
             ColumnSet colsContact = new ColumnSet(
-                new String[] { "fullname", "emailaddress1", "telephone1","parentcustomerid" } );
+                new String[] { "fullname", "emailaddress1", "telephone1","parentcustomerid", "firstname", "lastname" } );
             ColumnSet colsThesis = new ColumnSet(
                 new String[] { "new_name", "new_ohosid", "new_yhteyshenkilo", "new_ohjaaja" });
             QueryExpression qe = new QueryExpression();
@@ -113,15 +113,16 @@ namespace Microsoft.Crm.Sdk.Samples
 
             
             List<AccountModel> AccountList = new List<AccountModel>();
+            AccountList = Accounts();
 
 
             List<ThesisModel> ThesisList = new List<ThesisModel>();
-
+            ThesisList = Thesis();
             List<TopicModel> TopicList = new List<TopicModel>();
-
+            TopicList = Topics();
 
             List<ContactModel> ContactList = new List<ContactModel>();
-
+            ContactList = Contacts();
             
             EntityCollection econtact = service.RetrieveMultiple(qcontact);
             EntityCollection eaccount = service.RetrieveMultiple(qe);
@@ -165,6 +166,9 @@ namespace Microsoft.Crm.Sdk.Samples
             // For this sample, all required entity records are created in the Run() method.
             return new EntityReferenceCollection();
         }
+
+
+
         public void OHOScreateOrUpdateContacts(EntityCollection econtact)
         {
 
@@ -181,22 +185,20 @@ namespace Microsoft.Crm.Sdk.Samples
                 }
                 if (item.Attributes.ContainsKey("fullname"))
                 {
-                    string[] name = item.Attributes["fullname"].ToString().Split(' ');
-                    contact.etunimi = name.First();
-                    contact.sukunimi = name.Last();
+                    contact.kokonimi = item.Attributes["fullname"].ToString();
 
                 }
-                else
-                {
-                    if (item.Attributes.ContainsKey("firstname"))
-                    {
-                        contact.etunimi = item.Attributes["firstname"].ToString();
-                    }
-                    if (item.Attributes.ContainsKey("lastname"))
-                    {
-                        contact.sukunimi = item.Attributes["lastname"].ToString();
-                    }
-                }
+                //else
+                //{
+                //    if (item.Attributes.ContainsKey("firstname"))
+                //    {
+                //        contact.etunimi = item.Attributes["firstname"].ToString();
+                //    }
+                //    if (item.Attributes.ContainsKey("lastname"))
+                //    {
+                //        contact.sukunimi = item.Attributes["lastname"].ToString();
+                //    }
+                //}
                 if (item.Attributes.ContainsKey("parentcustomerid"))
                 {
                     contact.yhteiso = ((EntityReference)item.Attributes["parentcustomerid"]).Id;
@@ -343,9 +345,9 @@ namespace Microsoft.Crm.Sdk.Samples
                 bool needstobecreated = false;
                 Contact contact = new Contact
                 {
-                    FullName = item.etunimi + " " + item.sukunimi,
-                    FirstName = item.etunimi,
-                    LastName = item.sukunimi,
+                    FullName = item.kokonimi,
+                    //FirstName = item.etunimi,
+                    //LastName = item.sukunimi,
                     EMailAddress1 = item.email,
                     ParentCustomerId = RetrieveEntityById(service, "account", item.yhteiso).ToEntityReference(),
                     ContactId = item.ulkoinentunniste,
@@ -354,8 +356,7 @@ namespace Microsoft.Crm.Sdk.Samples
                 };
 
                 var query = new QueryExpression("contact");
-                query.Criteria.AddCondition("firstname", ConditionOperator.Equal, item.etunimi);
-                query.Criteria.AddCondition("lastname", ConditionOperator.Equal, item.sukunimi);
+                query.Criteria.AddCondition("fullname", ConditionOperator.Equal, item.kokonimi);
                 query.ColumnSet = colsContact;
                 EntityCollection users = service.RetrieveMultiple(query);
                 if (users.Entities.Count() > 0)
@@ -426,6 +427,10 @@ namespace Microsoft.Crm.Sdk.Samples
 
             }
         }
+
+
+
+
         public void CRMcreateOrUpdateClients(List<AccountModel> AccountList, IOrganizationService service, ColumnSet colsAccount)
         {
             foreach (var item in AccountList)
@@ -475,6 +480,8 @@ namespace Microsoft.Crm.Sdk.Samples
                     {
                         service.Update(account);
                     }
+                } else if(item.nimi == null || item.nimi == "") {
+                    continue;
                 }
                 else
                 {
@@ -826,8 +833,9 @@ namespace Microsoft.Crm.Sdk.Samples
             {
                 ContactModel contactMod = new ContactModel();
                 DataRow rows = contacts.Rows[i - 1];
-                contactMod.sukunimi = rows["Sukunimi"].ToString();
-                contactMod.etunimi = rows["Etunimi"].ToString();
+                contactMod.kokonimi = rows["kokonimi"].ToString();
+                //contactMod.sukunimi = rows["Sukunimi"].ToString();
+                //contactMod.etunimi = rows["Etunimi"].ToString();
                 contactMod.puhelin = rows["Puhelin"].ToString();
                 contactMod.email = rows["email"].ToString();
                 contactMod.tehtavanimike = rows["tehtavanimike"].ToString();
@@ -846,7 +854,7 @@ namespace Microsoft.Crm.Sdk.Samples
         public List<ContactModel> ContactsByName(ContactModel contact)
         {
             List<ContactModel> contactList = new List<ContactModel>();
-            DataTable contacts = sql.GetContactWithName(contact.etunimi, contact.sukunimi);
+            DataTable contacts = sql.GetContactWithName(/*contact.etunimi, contact.sukunimi*/contact.kokonimi);
 
             var i = contacts.Rows.Count;
 
@@ -854,8 +862,9 @@ namespace Microsoft.Crm.Sdk.Samples
             {
                 ContactModel contactMod = new ContactModel();
                 DataRow rows = contacts.Rows[i - 1];
-                contactMod.sukunimi = rows["Sukunimi"].ToString();
-                contactMod.etunimi = rows["Etunimi"].ToString();
+                contactMod.kokonimi = rows["kokonimi"].ToString();
+                //contactMod.sukunimi = rows["Sukunimi"].ToString();
+                //contactMod.etunimi = rows["Etunimi"].ToString();
                 contactMod.puhelin = rows["Puhelin"].ToString();
                 contactMod.email = rows["email"].ToString();
                 contactMod.tehtavanimike = rows["tehtavanimike"].ToString();
@@ -872,7 +881,7 @@ namespace Microsoft.Crm.Sdk.Samples
         public List<ContactModel> ContactsByNameAndId(ContactModel contact)
         {
             List<ContactModel> contactList = new List<ContactModel>();
-            DataTable contacts = sql.GetContactWithID(contact.etunimi, contact.sukunimi, contact.ulkoinentunniste);
+            DataTable contacts = sql.GetContactWithID(contact.kokonimi, contact.ulkoinentunniste);
 
             var i = contacts.Rows.Count;
 
@@ -880,8 +889,9 @@ namespace Microsoft.Crm.Sdk.Samples
             {
                 ContactModel contactMod = new ContactModel();
                 DataRow rows = contacts.Rows[i - 1];
-                contactMod.sukunimi = rows["Sukunimi"].ToString();
-                contactMod.etunimi = rows["Etunimi"].ToString();
+                contactMod.kokonimi = rows["kokonimi"].ToString();
+                //contactMod.sukunimi = rows["Sukunimi"].ToString();
+                //contactMod.etunimi = rows["Etunimi"].ToString();
                 contactMod.puhelin = rows["Puhelin"].ToString();
                 contactMod.email = rows["email"].ToString();
                 contactMod.tehtavanimike = rows["tehtavanimike"].ToString();
@@ -899,7 +909,7 @@ namespace Microsoft.Crm.Sdk.Samples
         public List<ContactModel> ContactsByNameIdParent(ContactModel contact)
         {
             List<ContactModel> contactList = new List<ContactModel>();
-            DataTable contacts = sql.GetContactWithParentID(contact.etunimi, contact.sukunimi, contact.ulkoinentunniste, contact.yhteiso);
+            DataTable contacts = sql.GetContactWithParentID(/*contact.etunimi, contact.sukunimi*/contact.kokonimi, contact.ulkoinentunniste, contact.yhteiso);
 
             var i = contacts.Rows.Count;
 
@@ -907,8 +917,9 @@ namespace Microsoft.Crm.Sdk.Samples
             {
                 ContactModel contactMod = new ContactModel();
                 DataRow rows = contacts.Rows[i - 1];
-                contactMod.sukunimi = rows["Sukunimi"].ToString();
-                contactMod.etunimi = rows["Etunimi"].ToString();
+                contactMod.kokonimi = rows["kokonimi"].ToString();
+                //contactMod.sukunimi = rows["Sukunimi"].ToString();
+                //contactMod.etunimi = rows["Etunimi"].ToString();
                 contactMod.puhelin = rows["Puhelin"].ToString();
                 contactMod.email = rows["email"].ToString();
                 contactMod.tehtavanimike = rows["tehtavanimike"].ToString();
@@ -926,7 +937,7 @@ namespace Microsoft.Crm.Sdk.Samples
         public List<ContactModel> ContactsByNameIdParentAndEmail(ContactModel contact)
         {
             List<ContactModel> contactList = new List<ContactModel>();
-            DataTable contacts = sql.GetContactWithEmail(contact.etunimi, contact.sukunimi, contact.ulkoinentunniste,contact.yhteiso, contact.email);
+            DataTable contacts = sql.GetContactWithEmail(/*contact.etunimi, contact.sukunimi*/contact.kokonimi, contact.ulkoinentunniste,contact.yhteiso, contact.email);
 
             var i = contacts.Rows.Count;
 
@@ -934,8 +945,9 @@ namespace Microsoft.Crm.Sdk.Samples
             {
                 ContactModel contactMod = new ContactModel();
                 DataRow rows = contacts.Rows[i - 1];
-                contactMod.sukunimi = rows["Sukunimi"].ToString();
-                contactMod.etunimi = rows["Etunimi"].ToString();
+                contactMod.kokonimi = rows["kokonimi"].ToString();
+                //contactMod.sukunimi = rows["Sukunimi"].ToString();
+                //contactMod.etunimi = rows["Etunimi"].ToString();
                 contactMod.puhelin = rows["Puhelin"].ToString();
                 contactMod.email = rows["email"].ToString();
                 contactMod.tehtavanimike = rows["tehtavanimike"].ToString();
@@ -952,7 +964,7 @@ namespace Microsoft.Crm.Sdk.Samples
         public List<ContactModel> ContactsByNameIdParentEmailAndTelephone(ContactModel contact)
         {
             List<ContactModel> contactList = new List<ContactModel>();
-            DataTable contacts = sql.GetContactWithPhone(contact.etunimi, contact.sukunimi, contact.ulkoinentunniste, contact.yhteiso,contact.email,contact.puhelin);
+            DataTable contacts = sql.GetContactWithPhone(/*contact.etunimi, contact.sukunimi*/contact.kokonimi, contact.ulkoinentunniste, contact.yhteiso,contact.email,contact.puhelin);
 
             var i = contacts.Rows.Count;
 
@@ -960,8 +972,9 @@ namespace Microsoft.Crm.Sdk.Samples
             {
                 ContactModel contactMod = new ContactModel();
                 DataRow rows = contacts.Rows[i - 1];
-                contactMod.sukunimi = rows["Sukunimi"].ToString();
-                contactMod.etunimi = rows["Etunimi"].ToString();
+                contactMod.kokonimi = rows["kokonimi"].ToString();
+                //contactMod.sukunimi = rows["Sukunimi"].ToString();
+                //contactMod.etunimi = rows["Etunimi"].ToString();
                 contactMod.puhelin = rows["Puhelin"].ToString();
                 contactMod.email = rows["email"].ToString();
                 contactMod.tehtavanimike = rows["tehtavanimike"].ToString();
@@ -979,7 +992,7 @@ namespace Microsoft.Crm.Sdk.Samples
         public List<ContactModel> ContactsByNameEmailAndTelephone(ContactModel contact)
         {
             List<ContactModel> contactList = new List<ContactModel>();
-            DataTable contacts = sql.GetContactWithNameEmailPhone(contact.etunimi, contact.sukunimi, contact.email, contact.puhelin);
+            DataTable contacts = sql.GetContactWithNameEmailPhone(/*contact.etunimi, contact.sukunimi*/contact.kokonimi, contact.email, contact.puhelin);
 
             var i = contacts.Rows.Count;
 
@@ -987,8 +1000,9 @@ namespace Microsoft.Crm.Sdk.Samples
             {
                 ContactModel contactMod = new ContactModel();
                 DataRow rows = contacts.Rows[i - 1];
-                contactMod.sukunimi = rows["Sukunimi"].ToString();
-                contactMod.etunimi = rows["Etunimi"].ToString();
+                contactMod.kokonimi = rows["kokonimi"].ToString();
+                //contactMod.sukunimi = rows["Sukunimi"].ToString();
+                //contactMod.etunimi = rows["Etunimi"].ToString();
                 contactMod.puhelin = rows["Puhelin"].ToString();
                 contactMod.email = rows["email"].ToString();
                 contactMod.tehtavanimike = rows["tehtavanimike"].ToString();
@@ -1005,7 +1019,7 @@ namespace Microsoft.Crm.Sdk.Samples
         public List<ContactModel> ContactsByNameEmailTelephoneAndParent(ContactModel contact)
         {
             List<ContactModel> contactList = new List<ContactModel>();
-            DataTable contacts = sql.GetContactWithNameEmailPhoneParent(contact.etunimi, contact.sukunimi, contact.email, contact.puhelin, contact.yhteiso);
+            DataTable contacts = sql.GetContactWithNameEmailPhoneParent(/*contact.etunimi, contact.sukunimi*/contact.kokonimi, contact.email, contact.puhelin, contact.yhteiso);
 
             var i = contacts.Rows.Count;
 
@@ -1013,8 +1027,9 @@ namespace Microsoft.Crm.Sdk.Samples
             {
                 ContactModel contactMod = new ContactModel();
                 DataRow rows = contacts.Rows[i - 1];
-                contactMod.sukunimi = rows["Sukunimi"].ToString();
-                contactMod.etunimi = rows["Etunimi"].ToString();
+                contactMod.kokonimi = rows["kokonimi"].ToString();
+                //contactMod.sukunimi = rows["Sukunimi"].ToString();
+                //contactMod.etunimi = rows["Etunimi"].ToString();
                 contactMod.puhelin = rows["Puhelin"].ToString();
                 contactMod.email = rows["email"].ToString();
                 contactMod.tehtavanimike = rows["tehtavanimike"].ToString();

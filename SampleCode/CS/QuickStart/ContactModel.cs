@@ -8,8 +8,8 @@ namespace Microsoft.Crm.Sdk.Samples
 {
     public class ContactModel
     {
-        public string etunimi { get; set; }
-        public string sukunimi { get; set; }
+        public string kokonimi { get; set; }
+        //public string sukunimi { get; set; }
         public string puhelin { get; set; }
         public string email { get; set; }
         public string tehtavanimike { get; set; }
